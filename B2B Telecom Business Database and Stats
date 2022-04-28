@@ -1,0 +1,32 @@
+/** This is my store.  I specialize in Telecom B2B Solutions. We mainly sell VOIP phone systems, Internet connections and Cell phone packages **/
+
+/** First I create the tables for the items**/
+
+CREATE TABLE voip (id INTEGER PRIMARY KEY, name TEXT, extensions INTEGER, phone TEXT, fax TEXT, price INTEGER);
+
+CREATE TABLE internet (id INTEGER PRIMARY KEY, name TEXT, previous_speed INTEGER, new_speed INTEGER, price INTEGER);
+
+CREATE TABLE cell_packages (id INTEGER PRIMARY KEY, name TEXT, os_type TEXT, phone_type TEXT, price INTEGER);
+
+/** Now I insert items into the tables**/
+
+INSERT INTO voip VALUES
+(1, "Enhanced", 2, "Polycomm", "No", 35),
+(2, "Voice only", 5, "Yealink", "No", 20),
+(3, "Voice Plus", 8, "Polycomm", "No", 25);
+
+INSERT INTO internet VALUES
+(1, "Copper", 25, 50, 75),
+(2, "Fiber", 25, 1000, 100);
+
+INSERT INTO cell_packages VALUES
+(1, "Unlimited data", "Android", "Samsung", 500),
+(2, "Unlimited talk", "ios", "iphone", 1500);
+
+/** putting the data in order **/
+
+SELECT * FROM voip ORDER BY price;
+
+/** Showing max price of a cell phone **/
+
+SELECT MAX(price) FROM cell_packages;
